@@ -1,0 +1,48 @@
+Program to Solve Tower of Hanoi problem using stacks
+
+
+About Tower of Hanoi:
+
+Tower of Hanoi is a Mathematical Puzzle consists of three Rods and a number of discs of different sizes which can be rearranged among them.The Puzzle starts with a neat Stack whose one Rod contains discs placed in ascending order of their sizes ,i.e. smallest at the top and largest at the bottom. 
+
+Objective of Tower of Hanoi:
+The Objective of the puzzle is to move all the discs from one Rod (Source Rod) to another Rod (Destination Rod) with the help of third Rod (Auxiliary Rod) but they must follow the listed rules below.
+ Rules of the puzzle Tower of Hanoi:   
+     During single iteration only one disc can be moved,i.e. you cannot move more than one discs at a time. 
+       You cannot place a larger disc over a smaller disc.
+ We already know about "Recursive Solution of Tower of Hanoi" ,We have also seen that for n discs the number of moves required is( 2n -1).
+Iterative Algorithm:
+ 1. At First Calculate the number of moves required i.e. "pow(2,n) - 1" where "n" is number of discs.
+ 2. If the number of discs i.e n is even then swap Destination Rod and Auxiliary Rod.
+ 3. for i = 1 upto number of moves:
+        Check if "i mod 3" == 1:
+        Perform Movement of top disc between Source Rod and Destination Rod. 
+        Check if "i mod 3" == 2:
+        Perform Movement of top disc between Source Rod and Auxiliary Rod.
+        Check if "i mod 3" == 0:
+        Perform Movement of top disc between Auxiliary Rod and Destination Rod.
+
+
+Approach
+The way to go about this problem is to first take examples with n being a very small number. Solving for n=2, first we move disk 1 from the source to the auxiliary pole, then disk 2 from the source to the destination pole and at last disk 1 from the auxiliary to the destination pole taking us a total of 3 steps. Similarly, If we solve for n=3, we find that it takes 7 steps to move all three disks from the source. The 7 steps being-
+disk 1 from source to destination
+disk 2 from source to auxiliary
+disk 1 from destination to auxiliary
+disk 3 from source to destination
+disk 1 from auxiliary to source
+disk 2 from auxiliary to destination
+disk 1 form source to destination
+
+So we notice that for a number of disks, n, it takes us 2^n-1 steps.
+
+The second step is to make two cases, one for n being an even number and the other for n being an odd number. We notice that for n being an even number, there are 3 transfers being repeated in an order-
+1) First transfer between source and auxiliary pole
+2) Second transfer between source and destination pole
+3) Third transfer between auxiliary and destination pole
+
+Similarly for n being an even number the 3 transfers being repeated in an order are-
+1) First transfer between source and destination pole
+2) Second transfer between source and auxiliary pole
+3) Third transfer between destination and auxiliary pole
+
+This implies that we can iteratively implement Tower of Hanoi using stacks in C++.
