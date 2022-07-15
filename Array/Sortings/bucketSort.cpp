@@ -2,10 +2,10 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+// O(n+k)
 void bucketSort(int arr[], int n)
 {
-    vector<float> b[n];
+    vector<int> b[n];
     for (int i = 0; i < n; i++) {
         int bi = n * arr[i]; 
         b[bi].push_back(arr[i]);
