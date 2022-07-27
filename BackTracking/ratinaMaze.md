@@ -1,3 +1,3 @@
 # Rat in a maze 
 
-![rat maze] rat-in-a-maze.png
+![rat maze!] (rat-in-a-maze.png)
