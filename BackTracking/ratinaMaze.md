@@ -16,6 +16,6 @@ Backtracking is an algorithmic technique for solving problems recursively by try
 * Optimisation Problem : Search for the best solution
 * Enumeration Problem : Find all feasible solutions
 
-
+**EXAMPLE**  
 * N Queen Problem
 * Rat in Maze Problem
