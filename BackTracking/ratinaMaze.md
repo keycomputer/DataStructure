@@ -1,3 +1,3 @@
 # Rat in a maze 
 
-![rat maze] rat-in-a-maze.webp
+![rat maze] rat-in-a-maze.png
