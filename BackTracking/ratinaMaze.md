@@ -10,8 +10,12 @@ Backtracking is an algorithmic technique for solving problems recursively by try
 * Verify if the solution is complete
 
 
-There are three types of problems which can be solved using backtracking :
+**There are three types of problems which can be solved using backtracking :**
 
-Decision Problem : Search for a feasible solution
-Optimisation Problem : Search for the best solution
-Enumeration Problem : Find all feasible solutions
+* Decision Problem : Search for a feasible solution
+* Optimisation Problem : Search for the best solution
+* Enumeration Problem : Find all feasible solutions
+
+
+* N Queen Problem
+* Rat in Maze Problem
