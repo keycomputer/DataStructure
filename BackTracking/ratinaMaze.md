@@ -1,3 +1,3 @@
-# 
+# Rat in a maze 
 
-![alt text] rat-in-a-maze.webp
+![rat maze] rat-in-a-maze.webp
