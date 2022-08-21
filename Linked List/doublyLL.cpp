@@ -117,9 +117,9 @@ class DLL
             {
                 temp  = temp->next;
             }
-            // Node *prev = temp->prev;
-            // prev->next= NULL;
-            temp->prev->next = NULL;
+            Node *prev = temp->prev;
+            prev->next= NULL;
+            // temp->prev->next = NULL;
             delete temp;
             }
         }
@@ -127,7 +127,7 @@ class DLL
     void deleteatpos(int pos)
     {
         if (pos<1)
-            cout<<"invlaid";
+            cout<<"invalid";
         else if(pos ==1 )
             deletebegin();
         else{

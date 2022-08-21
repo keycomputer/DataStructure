@@ -5,7 +5,11 @@ using namespace std;
 struct Node {
     int data;
     Node* next;
-    
+  Node(int elem)
+  {
+    data = elem;
+    next = NULL;
+  }    
 };
 
 class LinkedList {
@@ -15,6 +19,69 @@ class LinkedList {
     //constructor to create an empty LinkedList
     LinkedList(){
       head = NULL;
+    }
+    void insertatbegin(int elem)
+    {
+      Node *newnode = new Node (elem);
+      if(head == NULL)
+      {
+         head = newnode;
+         head->next = head;
+      }
+      else{
+          Node *temp = head;
+          while(temp->next!=head)
+          {
+            temp= temp->next;
+          }
+          temp->next= newnode;
+          newnode->next= head;
+          head= newnode;
+      }
+    }
+    void insertatpos(int elem, int pos)
+    {
+      Node *newnode = new Node (elem);
+      Node *temp = head;
+      int count = 1;
+      if(temp!= NULL)
+        temp = temp->next;
+      while(temp!=head)
+      { 
+        count++;
+        temp= temp->next;
+      }
+      if(pos < 1 || count <pos)
+        cout<<"Invlaid ";
+      else if (pos ==1)
+      {
+        insertatbegin(elem);
+      }
+      else{
+        temp= head;
+        for(int i =1; i<pos-1;i++)
+          temp= temp->next;
+        newnode->next = temp->next;
+        temp->next = newnode;
+      }
+    }
+    void insertatend(int elem)
+    {
+      Node *newnode = new Node(elem);
+      if (head == NULL)
+      {
+        head = newnode;
+         head->next = head;
+      }
+      else{
+          Node *temp = head;
+          while(temp->next!=head)
+          {
+            temp= temp->next;
+          }
+          temp->next= newnode;
+          newnode->next= head;
+      }
     }
     void PrintList() {
       Node* temp = head;
@@ -78,40 +145,49 @@ class LinkedList {
       //4. return the count
       return i;  
     } 
-    void deleteEvenNodes() {
-      if(head != NULL && head->next != head) {
+    // void deleteEvenNodes() {
+    //   if(head != NULL && head->next != head) {
       
-        //1. if the list has more than one element
-        //   create evenNode node - pointing to head
-        //   oddNode node - pointing to next of head
-        //   temp node - to store last odd node
-        Node* oddNode = head;
-        Node* evenNode = head->next; 
-        Node* temp = new Node();
+    //     //1. if the list has more than one element
+    //     //   create evenNode node - pointing to head
+    //     //   oddNode node - pointing to next of head
+    //     //   temp node - to store last odd node
+    //     Node* oddNode = head;
+    //     Node* evenNode = head->next; 
+    //     Node* temp = new Node(elem);
 
-        while(true) {
+    //     while(true) {
           
-          //2. delete even node and update evenNode and 
-          //   oddNode to next set of odd-even nodes
-          //   update temp node to latest oddNode node
-          //   continue the process till any of the node 
-          //   reaches head
-          temp = oddNode;
-          oddNode->next = evenNode->next;
-          free(evenNode);
-          oddNode = oddNode->next;
-          evenNode = oddNode->next;
-          if(oddNode == head || evenNode == head)
-            break;
-        }
+    //       //2. delete even node and update evenNode and 
+    //       //   oddNode to next set of odd-even nodes
+    //       //   update temp node to latest oddNode node
+    //       //   continue the process till any of the node 
+    //       //   reaches head
+    //       temp = oddNode;
+    //       oddNode->next = evenNode->next;
+    //       free(evenNode);
+    //       oddNode = oddNode->next;
+    //       evenNode = oddNode->next;
+    //       if(oddNode == head || evenNode == head)
+    //         break;
+    //     }
         
-        //3. if oddNode reaches head, make next of 
-        //   temp as head else make next of oddNode
-        //   as head
-        if(oddNode == head)
-          temp->next = head;
-        else
-          oddNode->next = head;
-      }
-    } 
+    //     //3. if oddNode reaches head, make next of 
+    //     //   temp as head else make next of oddNode
+    //     //   as head
+    //     if(oddNode == head)
+    //       temp->next = head;
+    //     else
+    //       oddNode->next = head;
+    //   }
+    // } 
 };
+int main()
+{
+ LinkedList l;
+ l.insertatbegin(1);
+ l.insertatbegin(2);
+ l.insertatend(3);
+ l.insertatpos(4,3);
+ l.PrintList();
+}
