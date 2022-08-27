@@ -136,23 +136,57 @@ class LL{
             }
         }
     }
+    void deleteodd()
+    {
+        Node *temp ;
+        while(1)
+        {
+            if(head->data % 2 != 0)
+            {
+                temp  = head;
+                head = head->next;
+                delete temp;
+            }
+            else
+                break;
+        }
+        Node * prev= head;
+        temp = head->next;
+        if(head != NULL){
+        while(1)
+        {
+            if (temp == NULL || prev -> next == NULL )
+                break;
+            if(temp->data%2 != 0)
+            {
+                prev->next = temp->next;   
+                delete temp;
+            }
+            temp = prev->next;
+
+        }
+        }
+    }
 };
 int main()
 {
     LL obj;
-    obj.insertatbegin(1);
     obj.insertatbegin(2);
-    obj.insertatbegin(3);
-    obj.insertatbegin(4);
-    obj.insertatend(5);
-    obj.insertatpos(6,3);
+    obj.insertatbegin(5);
+    obj.insertatbegin(30);
+    obj.insertatbegin(7);
+    obj.insertatend(9);
+    obj.insertatpos(11,3);
     // obj.display(obj.head);
+    // cout<<endl;
+    // obj.deletebegin();
+    // obj.deleteend();
+    // // obj.display(obj.head);
+    // obj.deletepos(3);
+    // obj.display(obj.head);
+    obj.display();
+    obj.deleteodd();
     cout<<endl;
-    obj.deletebegin();
-    obj.deleteend();
-    // obj.display(obj.head);
-    obj.deletepos(3);
-    // obj.display(obj.head);
-
+    obj.display();
 
 }

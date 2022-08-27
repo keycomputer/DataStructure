@@ -4,7 +4,7 @@ using namespace std;
 
 void countSort(int array[], int size) {
   int output[10];
-  int count[10];
+  int count[10]={0};
   int max = array[0];
 
   for (int i = 1; i < size; i++) {

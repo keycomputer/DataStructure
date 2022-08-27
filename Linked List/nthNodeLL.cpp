@@ -1,7 +1,8 @@
 #include<iostream>
 using namespace std;
-struct Node 
+class Node 
 {
+    public:
     int data;
     Node *next;
     Node(int elem)
@@ -60,7 +61,7 @@ class LL{
             insertatbegin(elem);
         else{
             Node *temp  = head;
-            for(int i=0;i<pos-2;i++)
+            for(int i=1;i<pos-1;i++)
             {
                 temp = temp->next;
             }
@@ -126,9 +127,94 @@ class LL{
             }
         }
     }
+    int nthnode(int index)
+    {
+        Node *temp = head;
+        int count=0;
+        while(temp != NULL)
+        {
+            if(count == index)
+                return temp->data;
+            temp= temp->next;
+            count++;
+        }
+        return -1;
+    }
+    int nthnode(Node *temp , int index)
+    {
+        if(index == 0 )
+            return temp->data;
+        if(temp == NULL)
+            return -1;
+        nthnode(temp->next, index-1);
+    }
+    int nthnodeLast(int index)
+    {
+        Node *temp= head;
+        int count=0;
+        while(temp != NULL)
+        {
+            temp= temp->next;
+            count++;
+        }
+        if(count <= index )
+            return -1;
+        else{
+            temp = head;
+            for(int i=0;i<count - index -1 ;i++)
+            {
+                temp = temp -> next;
+            }
+            return temp->data;
+        }
+
+    }
+    int nthnodeLast(Node *temp ,int index)
+    {
+        static int count = 0;
+        if (temp == NULL)   
+            return -1;
+        
+        nthnodeLast(temp->next, index);
+        if(count++ == index)
+            return temp->data;
+    }
+    bool iscir()
+    {
+        Node *temp = head;
+        while(temp!= NULL)
+        {
+            temp = temp->next;
+        }
+        return false;
+    }
 };
 
 int main()
 {
+    LL obj;
+    obj.insertatbegin(5);
+    obj.insertatbegin(4);
+    obj.insertatbegin(3);
+    obj.insertatbegin(2);
+    obj.insertatbegin(1);
+    // int n;
+    // cin>>n;
+    // if( obj.nthnode(n) == -1)
+    //     cout<<"Not Found ";
+    // else
+    //     cout<<obj.nthnode(n);
+    // if( obj.nthnode(obj.head,n) == -1)
+    //     cout<<"Not Found ";
+    // else
+    //     cout<<obj.nthnode(n);
+    if(obj.nthnodeLast(2)==-1)
+        cout<<"Not Found";
+    else
+        cout<<obj.nthnodeLast(2);
+    if(obj.nthnodeLast(obj.head, 2)==-1)
+        cout<<"Not Found";
+    else
+        cout<<obj.nthnodeLast(2);
     
 }
