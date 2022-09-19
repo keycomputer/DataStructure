@@ -62,7 +62,7 @@ void infixToPostfix(string s)
 int main()
 {
     // string exp = "a+b*(c^d-e)^(f+g*h)-i";
-    string s = "a+b";
+    string s = "1+2";
     infixToPostfix(s);
     return 0;
 }

@@ -54,7 +54,7 @@ void radix(int arr[], int n)
 
 
 int main() {
-  int array[] = {14, 24, 2, 89, 301, 13, 1};
+  int array[] = {1897	,780	,454,	677,	333,	245,	760};
   int n = sizeof(array) / sizeof(array[0]);
   radix(array, n);
   printArray(array, n);

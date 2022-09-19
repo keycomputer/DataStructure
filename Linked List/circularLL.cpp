@@ -302,23 +302,43 @@ class LinkedList {
       }
       cout<<"Count = " <<i<<endl;
     }
+    Node * concate(LinkedList L)
+    {
+      Node *temp1 = head;
+      
+      while(temp1->next != head)
+      {
+        cout<<temp1->data;
+        temp1= temp1->next;
+      }
+      Node *temp2 = L.head;
+      while(temp2->next!= L.head)
+      {
+        cout<<temp2->data;
+        temp2= temp2->next;
+      }
+      temp1->next = L.head;
+      temp2->next = head;
+      return head;
+    }
 };
 int main()
 {
  LinkedList l;
  l.insertatbegin(1);
  l.insertatbegin(2);
- l.insertatend(3);
- l.insertatpos(4,3);
+ l.insertatbegin(3);
  l.PrintList();
-//  LinkedList l2;
-//  l2.insertatbegin(1);
-//  l2.insertatbegin(2);
-//  l2.insertatend(3);
-//  l2.insertatpos(4,3);
-//  l2.PrintList();
- l.deleteatpos(1);
- cout<<endl;
- l.PrintList();
- l.countNode();
+ LinkedList l2;
+ l2.insertatbegin(4);
+ l2.insertatbegin(5);
+
+ l2.PrintList();
+//  l.deleteatpos(1);
+//  cout<<endl;
+//  l.PrintList();
+//  l.countNode();
+ l2.head = l2.concate(l);
+ l2.PrintList();
+
 }
