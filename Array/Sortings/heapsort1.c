@@ -22,7 +22,6 @@ void heapsort(int arr[], int n)
     // Build a max heap
     for(i = n/2 - 1; i >= 0; i--)
         heapify(arr, n, i);
-    // One by one extract elements
     for(i = n-1; i >= 0; i--)
     {
         swap(&arr[0], &arr[i]);
