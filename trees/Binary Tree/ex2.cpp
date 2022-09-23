@@ -51,7 +51,7 @@ struct Node* insert(struct Node *root,int value){
    }
    return root;
 }
-// display is performed by using Inorder Traversal
+
 void display(struct Node *root)
 {
    if(root != NULL){
