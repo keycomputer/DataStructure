@@ -101,10 +101,6 @@ int main()
         }
     }
 }
- 
-/*
- * Find Element in the Tree
- */
 void BST::find(int item, node **par, node **loc)
 {
     node *ptr, *ptrsave;
@@ -142,11 +138,7 @@ void BST::find(int item, node **par, node **loc)
     *loc = NULL;
     *par = ptrsave;
 }
- 
-/*
- * Inserting Element into the Tree
- */
-void BST::insert(node *tree, node *newnode)
+ void BST::insert(node *tree, node *newnode)
 {
     if (root == NULL)
     {
@@ -193,10 +185,6 @@ void BST::insert(node *tree, node *newnode)
         }	
     }
 }
- 
-/*
- * Delete Element from the tree
- */
 void BST::del(int item)
 {
     node *parent, *location;
@@ -221,7 +209,9 @@ void BST::del(int item)
         case_c(parent, location);
     free(location);
 }
- 
+// Case 1: Deleting a node with no children: remove the node from the tree.
+// Case 2: Deleting a node with two children: call the node to be deleted N . Do not delete N . ...
+// Case 3: Deleting a node with one child: remove the node and replace it with its child.
 /*
  * Case A
  */

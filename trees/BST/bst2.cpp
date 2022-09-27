@@ -45,10 +45,7 @@ void Insert(TreeNode*& root, const int& data){
 
 
 bool isfull(TreeNode* root){
-    /**
-     * Check if a binary tree is full or not
-     * A binary tree is full when every node in the 
-     */
+
     if(root == nullptr){ return true; }
     if(root->left == NULL && root->right ==  NULL) 
         { return true; }
@@ -58,11 +55,6 @@ bool isfull(TreeNode* root){
 }
 
 int depth(TreeNode* root){
-    /**
-     * Find the depth of the left most tree.
-     * Here the depth of the left most tree is foun
-     */
-
     int d = 0;
     while(root != NULL){
             root = root->left;
@@ -73,10 +65,6 @@ int depth(TreeNode* root){
 
 
 bool perfect_recursive(TreeNode* cur, int depth, int level = 0){
-    /** A Recursive strategy to check if a tree is perfect or not
-     * A binary tree is perfect if when all the inner node's
-     * has two children and the all the leaf node's are at the
-     * same level*/
 
     if(cur == NULL)
         { return true; }
