@@ -1,7 +1,5 @@
 #include<iostream>
 using namespace std;
-
-
 // Basic Structure of a Tree
 struct Node {
     int data;
@@ -14,8 +12,6 @@ struct Node {
         right = NULL;
     }
 };
-
-
 //Function to find the height of the tree
 int height(struct Node* root)
 {

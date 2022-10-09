@@ -1,0 +1,48 @@
+
+void mirror(Node *root)
+{
+	if(root == NULL)
+		return;	
+	else
+	{
+		mirror(root->left);
+		mirror(root->right);
+		swap(root->left, root->right);
+		//Node *temp = root->left;
+		
+		
+	}
+}
+
+// 10 - 20
+int count(Node *root, int n1, int n2)
+{
+	
+}
+
+
+int countNode(Node * root)
+{
+if (root== NULL)
+	return 0 ;
+else
+	return(countNode(root->left) + countNode (root->right) +1 );
+}
+
+2 4 7 8 10
+
+arr, left , 0 ->10->2->8
+8 =  root(2)
+(index = 1)
+2 = 4
+(index = 2)
+4 = 7 
+if(root == NULL)
+	return;
+
+BSTOBst(arr, root->left, index)
+  root->data = arr[index]
+index++
+BSTOBst(arr, root->right, index)
+
+

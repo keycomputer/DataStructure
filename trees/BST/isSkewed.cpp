@@ -2,14 +2,9 @@
 
 // Input:  Preorder traversal of BST: [15, 30, 25, 18, 20]
 // Output: BST is skewed
-
-
-
-
 #include <iostream>
 #include <limits.h>
 using namespace std;
-// Function to determine whether the given preorder traversal of a binary tree represents a skewed BST
 int isSkewedBST(int pre[], int n)
 {
     int min = INT_MIN, max = INT_MAX;

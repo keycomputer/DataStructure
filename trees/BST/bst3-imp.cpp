@@ -2,7 +2,7 @@
  * C++ Program To Implement BST
  */
 # include <iostream>
-# include <cstdlib>
+// # include <cstdlib>
 using namespace std;
 /*
  * Node Declaration
@@ -10,6 +10,7 @@ using namespace std;
 struct node
 {
     int info;
+    int freq;
     struct node *left;
     struct node *right;
 }*root;
@@ -18,6 +19,8 @@ struct node
  */
 class BST
 {
+    // node *root;
+
     public:
         void find(int, node **, node **);    
         void insert(node *, node *);
@@ -132,8 +135,8 @@ void BST::find(int item, node **par, node **loc)
         ptrsave = ptr;
         if (item < ptr->info)
             ptr = ptr->left;
-	else
-	    ptr = ptr->right;
+	    else
+	        ptr = ptr->right;
     }
     *loc = NULL;
     *par = ptrsave;
@@ -152,6 +155,7 @@ void BST::find(int item, node **par, node **loc)
     if (tree->info == newnode->info)
     {
         cout<<"Element already in the tree"<<endl;
+        // tree->freq++;
         return;
     }
     if (tree->info > newnode->info)
@@ -159,7 +163,7 @@ void BST::find(int item, node **par, node **loc)
         if (tree->left != NULL)
         {
             insert(tree->left, newnode);	
-	}
+	    }
 	else
 	{
             tree->left = newnode;
